@@ -16,6 +16,23 @@
       "message": "still had this laying around on an inactive branch\nneeds vendor regen as well",
       "revId": "77fe9db9eea07d71d293d37ad4b4e70e959ab615",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "322562bf_b963c729",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2026-02-10T17:30:46Z",
+      "side": 1,
+      "message": "why is (some) in brackets though?",
+      "revId": "77fe9db9eea07d71d293d37ad4b4e70e959ab615",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
