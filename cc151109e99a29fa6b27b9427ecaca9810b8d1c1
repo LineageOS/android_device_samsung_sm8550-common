@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "412f0955_2e1c13e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2026-02-13T10:53:29Z",
+      "side": 1,
+      "message": "and are we sure that no devices in the sm8550 actually use them and just have the service decommonized?",
+      "revId": "cc151109e99a29fa6b27b9427ecaca9810b8d1c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
