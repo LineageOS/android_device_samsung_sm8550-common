@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e0c85f3_dd058b5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2026-02-16T15:16:22Z",
+      "side": 1,
+      "message": "interesting that build gave no error then",
+      "revId": "840c61f0cb24a22b38509362d423ece8ea445d37",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29364aba_daff6c6a",
