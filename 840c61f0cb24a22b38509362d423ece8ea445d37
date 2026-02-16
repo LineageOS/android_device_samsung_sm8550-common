@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29364aba_daff6c6a",
+        "filename": "sepolicy/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 36466
+      },
+      "writtenOn": "2026-02-16T15:15:57Z",
+      "side": 1,
+      "message": "This is already in sepolicy_vndr",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 143
+      },
+      "revId": "840c61f0cb24a22b38509362d423ece8ea445d37",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
