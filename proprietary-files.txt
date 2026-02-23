@@ -1,4 +1,4 @@
-# All unpinned blobs are extracted from S911BXXS8DYG5
+# All unpinned blobs are extracted from S911BXXS8EZA1
 
 # ADSP
 vendor/bin/adsprpcd
@@ -395,7 +395,6 @@ vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libsynx.so
 vendor/lib64/libtensorflowLite.singletake.camera.samsung.so
 vendor/lib64/libtensorflowlite.camera.samsung.so
-vendor/lib64/libtensorflowlite_gpu.camera.samsung.so
 vendor/lib64/libtfestriping.so
 vendor/lib64/libtflitecore.so
 vendor/lib64/libthreadutils.so
@@ -686,7 +685,7 @@ vendor/lib64/hw/vulkan.adreno.so
 vendor/bin/hermesd
 vendor/etc/init/hermesd.rc
 vendor/etc/secnvm/k250a_47000301_0.img
-vendor/etc/secnvm/k250a_47000304_c.img
+vendor/etc/secnvm/k250a_47000305_c.img
 vendor/etc/secnvm/k250a_47000306_1.img
 vendor/lib64/libese-grdg.so
 vendor/lib64/libhermes.so
@@ -816,7 +815,6 @@ vendor/etc/libese-nxp.conf
 vendor/etc/libnfc-nxp.conf
 vendor/lib64/ese_spi_nxp.so
 vendor/lib64/nfc_nci_nxpsn.so
-vendor/etc/nfc/libnfc-nxp_RF.conf:vendor/libnfc-nxp_RF.conf
 
 # NFC firmware
 vendor/firmware/nfc/libsn220u_fw.so
@@ -1099,7 +1097,6 @@ vendor/etc/vintf/manifest/iweaver_v1_manifest.xml
 # WiFi
 vendor/bin/cnss-daemon
 vendor/bin/pktlogconf
-vendor/etc/wifi/indoorchannel.info
 
 # Widevine DRM
 vendor/bin/hw/android.hardware.drm-service.widevine
