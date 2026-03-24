@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16334388_9b662fb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2026-03-24T09:14:37Z",
+      "side": 1,
+      "message": "need rebasing on current HEAD, u chained abandoned stuff",
+      "revId": "6da051f0870d65c75f90261a6bab3dfbc935c81c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
