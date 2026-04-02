@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78357834_ebd276b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-04-02T00:01:21Z",
+      "side": 1,
+      "message": "WORKS! THANKS!\ntested: xiaomi sm8450 ziyi",
+      "revId": "76f26b2e48a967fde0ae09e8eb2e8936383bbf0b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
