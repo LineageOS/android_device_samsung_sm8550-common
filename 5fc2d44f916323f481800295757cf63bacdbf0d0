@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30ba55ca_d87f36a8",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 36705
+      },
+      "writtenOn": "2026-06-30T15:48:41Z",
+      "side": 1,
+      "message": "I could be wrong here but I\u0027m pretty sure that\u0027s useless without 32 bit architecture flags.",
+      "revId": "5fc2d44f916323f481800295757cf63bacdbf0d0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
