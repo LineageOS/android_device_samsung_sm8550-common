@@ -24,6 +24,7 @@
 
 #include <string.h>
 
+#include <algorithm>
 #include <memory>
 
 #include <HidlUtils.h>
@@ -335,6 +336,10 @@ Return<uint32_t> StreamOut::getLatency() {
 }
 
 Return<Result> StreamOut::setVolume(float left, float right) {
+    if (mUseSoftwareVoipVolume.load(std::memory_order_acquire)) {
+        return Result::NOT_SUPPORTED;
+    }
+
     if (mStream->set_volume == NULL) {
         return Result::NOT_SUPPORTED;
     }
@@ -611,6 +616,12 @@ Result StreamOut::doUpdateSourceMetadata(const SourceMetadata& sourceMetadata) {
         return Stream::analyzeStatus("sourceMetadataToHal", status);
     }
 #endif  // MAJOR_VERSION <= 6
+    const bool useSoftwareVoipVolume =
+            std::any_of(halTracks.begin(), halTracks.end(), [](const auto& track) {
+                return track.usage == AUDIO_USAGE_VOICE_COMMUNICATION;
+            });
+    mUseSoftwareVoipVolume.store(useSoftwareVoipVolume, std::memory_order_release);
+
     const source_metadata_t halMetadata = {
         .track_count = halTracks.size(),
         .tracks = halTracks.data(),
@@ -627,6 +638,12 @@ Result StreamOut::doUpdateSourceMetadataV7(const SourceMetadata& sourceMetadata)
         status != NO_ERROR) {
         return Stream::analyzeStatus("sourceMetadataToHal", status);
     }
+    const bool useSoftwareVoipVolume =
+            std::any_of(halTracks.begin(), halTracks.end(), [](const auto& track) {
+                return track.base.usage == AUDIO_USAGE_VOICE_COMMUNICATION;
+            });
+    mUseSoftwareVoipVolume.store(useSoftwareVoipVolume, std::memory_order_release);
+
     const source_metadata_v7_t halMetadata = {
             .track_count = halTracks.size(),
             .tracks = halTracks.data(),
