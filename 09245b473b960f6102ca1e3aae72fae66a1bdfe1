@@ -16,6 +16,23 @@
       "message": "RIL dead with this",
       "revId": "09245b473b960f6102ca1e3aae72fae66a1bdfe1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2f0c24c_beeb85ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34512
+      },
+      "writtenOn": "2026-07-27T20:23:53Z",
+      "side": 1,
+      "message": "not this patch specifically turns out but something has RIL ded",
+      "revId": "09245b473b960f6102ca1e3aae72fae66a1bdfe1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
