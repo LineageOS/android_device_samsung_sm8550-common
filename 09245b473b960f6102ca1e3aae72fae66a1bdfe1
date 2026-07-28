@@ -33,6 +33,23 @@
       "message": "not this patch specifically turns out but something has RIL ded",
       "revId": "09245b473b960f6102ca1e3aae72fae66a1bdfe1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc85353a_92f1c009",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32034
+      },
+      "writtenOn": "2026-07-28T09:23:27Z",
+      "side": 1,
+      "message": "No issues from my side.",
+      "revId": "09245b473b960f6102ca1e3aae72fae66a1bdfe1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
