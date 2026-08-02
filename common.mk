@@ -325,6 +325,9 @@ ifeq ($(TARGET_HAS_SPEN),true)
 PRODUCT_PACKAGES += \
     SPenActions \
     vendor.samsung.hardware.spen-service
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc
 endif
 
 # Sensors
