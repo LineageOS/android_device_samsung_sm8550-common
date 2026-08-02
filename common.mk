@@ -327,6 +327,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.samsung.hardware.spen-service
+
+PRODUCT_COPY_FILES += \   
+    $(LOCAL_PATH)/configs/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc
 endif
 
 # Sensors
