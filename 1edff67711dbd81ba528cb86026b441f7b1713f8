@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dd752b5_48f81b67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2026-08-09T14:59:03Z",
+      "side": 1,
+      "message": "seems the SPen on dm3q doesnt connect",
+      "revId": "1edff67711dbd81ba528cb86026b441f7b1713f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
