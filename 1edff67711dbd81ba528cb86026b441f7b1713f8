@@ -16,6 +16,24 @@
       "message": "seems the SPen on dm3q doesnt connect",
       "revId": "1edff67711dbd81ba528cb86026b441f7b1713f8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c1d901f_92ddb0ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2026-08-13T16:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dd752b5_48f81b67",
+      "revId": "1edff67711dbd81ba528cb86026b441f7b1713f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
