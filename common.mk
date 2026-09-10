@@ -45,17 +45,23 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libsamsungSoundbooster_plus \
     libsndcardparser \
     libtinycompress \
     libvolumelistener \
+    SamsungDAP \
+    SoundBoosterStage \
     sound_trigger.primary.kalama
+
+TARGET_EXCLUDES_AUDIOFX := true
+
+$(call soong_config_set,samsungAudioVars,soundbooster_dsp_library,//vendor/samsung/sm8550-common:lib_SoundBooster_ver1100)
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8550/audio/primary-hal
 CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/kalama
 CONFIG_PAL_SRC_DIR := $(AUDIO_HAL_DIR)/../pal/configs/kalama
 
 PRODUCT_COPY_FILES += \
-    $(CONFIG_HAL_SRC_DIR)/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama/audio_effects.conf \
     $(CONFIG_PAL_SRC_DIR)/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
     $(CONFIG_HAL_SRC_DIR)/microphone_characteristics.xml:$(TARGET_COPY_OUT_VENDOR)/etc/microphone_characteristics.xml
 
