@@ -241,8 +241,8 @@ Return<Result> PrimaryDevice::setMode(AudioMode mode) {
 
         for (int attempt = 0;
              attempt < kSamsungCallSlotWaitAttempts &&
-                     strcmp(simSlot1, "0") == 0 &&
-                     strcmp(simSlot2, "0") == 0;
+                     strcmp(simSlot1, "1") != 0 &&
+                     strcmp(simSlot2, "1") != 0;
              ++attempt) {
             usleep(kSamsungCallSlotWaitSleepUs);
             property_get("vendor.calls.slot_id0", simSlot1, "");
