@@ -227,12 +227,9 @@ Return<Result> PrimaryDevice::setMode(AudioMode mode) {
      * For the g_call_sim_slot parameter 0x01 describes SIM1 and 0x02 SIM2.
      */
 
-    char simSlot1[92], simSlot2[92];
-
-    // These props return either 0 (not calling),
-    // or 1 (SIM is calling)
-    property_get("vendor.calls.slot_id0", simSlot1, "");
-    property_get("vendor.calls.slot_id1", simSlot2, "");
+    // Treat unset or invalid call-slot properties as inactive.
+    bool simSlot1 = property_get_bool("vendor.calls.slot_id0", false);
+    bool simSlot2 = property_get_bool("vendor.calls.slot_id1", false);
 
     // Wait until one sim slot reports a call
     if (mode == AudioMode::IN_CALL) {
@@ -240,17 +237,15 @@ Return<Result> PrimaryDevice::setMode(AudioMode mode) {
         static constexpr useconds_t kSamsungCallSlotWaitSleepUs = 10 * 1000;
 
         for (int attempt = 0;
-             attempt < kSamsungCallSlotWaitAttempts &&
-                     strcmp(simSlot1, "0") == 0 &&
-                     strcmp(simSlot2, "0") == 0;
+             attempt < kSamsungCallSlotWaitAttempts && !simSlot1 && !simSlot2;
              ++attempt) {
             usleep(kSamsungCallSlotWaitSleepUs);
-            property_get("vendor.calls.slot_id0", simSlot1, "");
-            property_get("vendor.calls.slot_id1", simSlot2, "");
+            simSlot1 = property_get_bool("vendor.calls.slot_id0", false);
+            simSlot2 = property_get_bool("vendor.calls.slot_id1", false);
         }
     }
 
-    if (strcmp(simSlot1, "1") == 0) {
+    if (simSlot1) {
         // SIM1
         mDevice->halSetParameters("g_call_sim_slot=0x01");
         if (mode == AudioMode::IN_CALL) {
@@ -258,7 +253,7 @@ Return<Result> PrimaryDevice::setMode(AudioMode mode) {
             mDevice->halSetParameters("g_call_state=2");
             mDevice->halSetParameters(kPrimaryVoiceCallActive);
         }
-    } else if (strcmp(simSlot2, "1") == 0) {
+    } else if (simSlot2) {
         // SIM2
         mDevice->halSetParameters("g_call_sim_slot=0x02");
         if (mode == AudioMode::IN_CALL) {
