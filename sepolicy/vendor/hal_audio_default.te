@@ -21,3 +21,5 @@ dontaudit hal_audio_default default_prop:file { read open getattr map };
 
 # Allow binder calls from audio hal to system app
 binder_call(hal_audio_default, system_app)
+
+get_prop(hal_audio_default, vendor_cs_call_state_prop)

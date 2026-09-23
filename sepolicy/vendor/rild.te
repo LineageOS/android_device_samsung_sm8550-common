@@ -43,3 +43,5 @@ set_prop(rild, vendor_data_ko_prop)
 set_prop(rild, vendor_data_shsusr_prop)
 
 dontaudit rild { default_prop system_prop }:file { read open getattr map };
+
+set_prop(rild, vendor_cs_call_state_prop)

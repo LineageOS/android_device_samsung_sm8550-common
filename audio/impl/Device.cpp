@@ -30,6 +30,7 @@
 #include <algorithm>
 
 #include <android/log.h>
+#include <cutils/properties.h>
 #include <hidl/HidlTransportSupport.h>
 #include <mediautils/MemoryLeakTrackUtil.h>
 #include <memunreachable/memunreachable.h>
@@ -47,9 +48,24 @@ namespace util {
 using namespace ::android::hardware::audio::CORE_TYPES_CPP_VERSION::implementation::util;
 }
 
-Device::Device(audio_hw_device_t* device) : mIsClosed(false), mDevice(device) {}
+Device::Device(audio_hw_device_t* device)
+    : mIsClosed(false), mDevice(device),
+      mCallAudio([this](int mode) {
+          return mDevice->set_mode(mDevice, static_cast<audio_mode_t>(mode));
+      }, [this](const char* parameters) {
+          return halSetParameters(parameters);
+      }, [] {
+          char value[PROPERTY_VALUE_MAX];
+          property_get(samsung::ril::kCallStateProperty, value, "");
+          return std::string(value);
+      }) {}
+
+Result Device::setCallMode(audio_mode_t mode) {
+    return analyzeStatus("set_mode", mCallAudio.setMode(mode, mode == AUDIO_MODE_IN_CALL));
+}
 
 Device::~Device() {
+    mCallAudio.stop();
     (void)doClose();
     mDevice = nullptr;
 }
@@ -557,6 +573,7 @@ Return<Result> Device::setConnectedState(const DeviceAddress& address, bool conn
 
 Result Device::doClose() {
     if (mIsClosed || mOpenedStreamsCount != 0) return Result::INVALID_STATE;
+    mCallAudio.stop();
     mIsClosed = true;
     return analyzeStatus("close", audio_hw_device_close(mDevice));
 }
