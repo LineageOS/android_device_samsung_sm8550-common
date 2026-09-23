@@ -14,9 +14,11 @@ cc_library_shared {
         "-DREAL_LIB_NAME=\"libsec-ril-impl.so\"",
     ],
     shared_libs: [
+        "libcutils",
         "libdl",
         "liblog",
     ],
+    header_libs: ["samsung_sm8550_call_state_headers"],
     include_dirs: [
         "hardware/ril/include",
     ],
