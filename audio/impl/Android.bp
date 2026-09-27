@@ -1,7 +1,6 @@
 filegroup {
     name: "android.hardware.audio-impl_samsung-sm8550_srcs",
     srcs: [
-        "CallAudioController.cpp",
         "Device.cpp",
         "DevicesFactory.cpp",
         "ParametersUtil.cpp",
@@ -17,8 +16,6 @@ cc_library_headers {
     proprietary: true,
     vendor: true,
     export_include_dirs: ["include"],
-    header_libs: ["samsung_sm8550_call_state_headers"],
-    export_header_lib_headers: ["samsung_sm8550_call_state_headers"],
 }
 
 cc_defaults {

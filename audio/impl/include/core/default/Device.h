@@ -20,7 +20,6 @@
 #include PATH(android/hardware/audio/FILE_VERSION/IDevice.h)
 
 #include "ParametersUtil.h"
-#include "CallAudioController.h"
 
 #include <memory>
 
@@ -172,8 +171,6 @@ struct Device : public IDevice, public ParametersUtil {
     void closeOutputStream(audio_stream_out_t* stream);
     audio_hw_device_t* device() const { return mDevice; }
 
-    Result setCallMode(audio_mode_t mode);
-
     uint32_t version() const { return mDevice->common.version; }
 
     int halSetParameters(const char* keysAndValues) override;
@@ -182,7 +179,6 @@ struct Device : public IDevice, public ParametersUtil {
     bool mIsClosed;
     audio_hw_device_t* mDevice;
     int mOpenedStreamsCount = 0;
-    samsung::audio::CallAudioController mCallAudio;
 
     virtual ~Device();
 
