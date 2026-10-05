@@ -21,6 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Audio
+$(call soong_config_set_bool,qtiaudio,pal_voip_sample_rate_calibration,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl.samsung-sm8550 \
     android.hardware.audio.effect@7.0-impl \
@@ -45,17 +47,23 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libsamsungSoundbooster_plus \
     libsndcardparser \
     libtinycompress \
     libvolumelistener \
+    SamsungDAP \
+    SoundBoosterStage \
     sound_trigger.primary.kalama
+
+TARGET_EXCLUDES_AUDIOFX := true
+
+$(call soong_config_set,samsungAudioVars,soundbooster_dsp_library,//vendor/samsung/sm8550-common:lib_SoundBooster_ver1100)
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8550/audio/primary-hal
 CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/kalama
 CONFIG_PAL_SRC_DIR := $(AUDIO_HAL_DIR)/../pal/configs/kalama
 
 PRODUCT_COPY_FILES += \
-    $(CONFIG_HAL_SRC_DIR)/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_kalama/audio_effects.conf \
     $(CONFIG_PAL_SRC_DIR)/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
     $(CONFIG_HAL_SRC_DIR)/microphone_characteristics.xml:$(TARGET_COPY_OUT_VENDOR)/etc/microphone_characteristics.xml
 
@@ -319,6 +327,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sehradiomanager.conf
+
+# SPen
+ifeq ($(TARGET_HAS_SPEN),true)
+PRODUCT_PACKAGES += \
+    SPenActions \
+    vendor.samsung.hardware.spen-service
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_e-pen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_e-pen.idc
+endif
 
 # Sensors
 PRODUCT_PACKAGES += \
